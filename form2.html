@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning Javascript</title>
+	<link rel="stylesheet" href="style.css" />
+	
+</head>
+
+<body>
+<div class="header">
+	<h1 id="heading"> Learning Javascript </h1>
+	<p>With Jay</p>
+</div>
+
+<div class="container">
+<form method="post" action="something.php" name="myForm" onsubmit="return validateForm()">
+<div>
+	<label>First Name</label>
+	<input type="text" name="firstName" id="firstName" />
+</div>
+<div>
+	<label>Last Name</label>
+	<input type="text" name="lastName" id="lastName" />
+</div>
+<br />
+<div>
+	<label>Background</label>
+	<select name="background" id="background" onchange="changeBackground(this)">
+		<option value="red">Red</option>
+		<option value="blue">Blue</option>
+		<option value="green">Green</option>
+	</select>
+</div>
+<br />
+<input type="submit" value="Submit" />
+ 
+</div>
+
+<script>
+function validateForm(){
+	var firstName = document.forms["myForm"]["firstName"].value;
+
+	if(firstName ==null || firstName ==""){
+		alert("First name is required!");
+		return false;
+	}
+
+	if(firstName.length < 3){
+		alert("First name must be !");
+		return false;
+	}
+}
+</script>
+
+</body>
+</html>

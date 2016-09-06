@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Javascript regular expression </title>
+
+</head>
+
+<body>
+	<script type="text/javascript">
+	var regPat = /[0-9]{1,5}\s[A-Z]{2}\b[a-z]{2,}/;
+
+	var regPat = new RegExp("\d{1,5}\s[A-Z]{2}\b[a-z]{2,}");
+
+	var longStr = "Derek 124 Main St Pittsburgh 15457 (222)-333-4444 anything@gmail.com";
+
+	document.write(longStr.search(/[A-Za-z]{1,15}\s/) + "<br />"); 
+	//return the index
+	</script>
+</body>
+</html>

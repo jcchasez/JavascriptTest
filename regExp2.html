@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Javascript regular expression </title>
+
+</head>
+
+<body>
+	<script type="text/javascript">
+	var regPat = /[0-9]{1,5}\s[A-Z]{2}\b[a-z]{2,}/;
+ 
+
+	var longStr = "Derek 124 Main St Pittsburgh 15457 (222)-333-4444 anything@gmail.com";
+//return the index of anything
+	document.write(longStr.search(/[A-Za-z]{1,15}\s/) + "<br />"); 
+	//return the index of email
+	document.write(longStr.search(/[A-Za-z0-9._-]+@[A-Za-z0-9]+\.[A-Za-z]{2,4}/) + "<br />"); 
+
+	//replace function
+	document.write(longStr.replace(/\d{5}/, "55555") + "<br />");
+	//but the original string doesnot change
+	document.write(longStr + "<br />");
+//g means to find all the match throughout the entire string
+	matchArray = longStr.match(/\d{4,5}/g); 
+	document.write(matchArray+ "<br />");
+
+	
+	</script>
+</body>
+</html>

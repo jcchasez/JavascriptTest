@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Javascript regular expression </title>
+
+	<script type="text/javascript">
+	<!-- Hide this from browsers that dont understand Javascript
+	function editNodeText(regex, input, helpId, helpMessage){
+		if(!regex.test(input)){
+			if(helpId != null)
+				while(helpId.firstChild){
+					helpId.removeChild(helpId.firstChild);
+				}
+				helpId.appendChild(document.createTextNode(helpMessage));
+		return false;
+		}
+		else{
+			if(helpId != null){
+				while(helpId.firstChild){
+					helpId.removeChild(helpId.firstChild);
+				}
+				return true;
+			}
+		}
+
+	}
+
+	function isTheFieldEmpty(inputField, helpId){
+		return editNodeText(/^[A-Za-z\.\' \-]{2,15}\s?[A-Za-z\.\' \-]{2,15}\s?[A-Za-z\.\' \-]{2,15}/, inputField.value, helpId, "Please enter a valid name");
+	}
+
+	function isAddressOk(inputField, helpId){
+		return editNodeText(/^[A-Za-z0-9\.\' \-]{5,30}$/, inputField.value, helpId, "Enter a street");
+	}
+
+	function isStateOk(inputField, helpId){
+		return editNodeText(/^A[LKSZRAEPS]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[DLNA]|K[SY]|LA|M[EDAINSOTHP]|N[EVHJMYCD]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[TAI]|W[AVIY]$/i, inputField.value, helpId, "Enter a state code");
+	}
+//? means can be one of these or none of these
+	function isPhoneOk(inputField, helpId){
+		//1-(412)
+		//1-412
+		return editNodeText(/^([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})$/, inputField, helpId, "Enter a phone number");
+	}
+	function isEmailOk(inputField, helpId){
+		return editNodeText(/^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/, inputField.value, helpId, "Enter an email");
+	}
+	-->FInish hiding the Javascript code
+	</script>
+
+	<noscript>
+	<h3>This site requires Javascript</h3>
+	</noscript>
+</head>
+
+<body>
+    <div>
+       Enter your name:
+       <input id="name" name="name" type="text" size="30"
+            onblur="isTheFieldEmpty(this, document.getElementById('name_help'))" />
+       <span id="name_help"></span>
+     </div> 
+     <div>
+       Enter your street address:
+       <input id="street" name="street" type="text" size="30"
+        onblur="isAddressOk(this, document.getElementById('street_help'))" />
+       <span id="street_help"></span>
+     </div>  
+      <div>
+       Enter your city:
+       <input id="city" name="city" type="text" size="30"
+            onblur="isTheFieldEmpty(this, document.getElementById('city_help'))" />
+       <span id="city_help"></span>
+     </div>
+      <div>
+       Enter your state code:
+       <input id="state" name="state" type="text" size="30"
+            onblur="isStateOk(this, document.getElementById('state_help'))" />
+       <span id="state_help"></span>
+     </div>  
+      <div>
+       Enter your phone number:
+       <input id="phone" name="phone" type="text" size="30"
+            onblur="isPhoneOk(this, document.getElementById('phone_help'))" />
+       <span id="phone_help"></span>
+     </div>
+      <div>
+       Enter your email:
+       <input id="email" name="email" type="text" size="30"
+            onblur="isEmailOk(this, document.getElementById('email_help'))" />
+       <span id="email_help"></span>
+     </div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning Javascript</title>
+	<link rel="stylesheet" href="style.css" />
+	<!--<script src="main.js"></script> -->
+</head>
+<body onload="showDate()">
+<div class="header">
+	<h1 id='heading'>Learning JavaScript</h1>
+	<p>With Jay</p>
+</div>
+
+<div class="container">
+<!--<button onclick="doClick()">Click Me</button> 
+<button onclick="this.innerHTML='You clicked!'">Click Me</button>
+<button onclick="changeText()">Click Me</button> 
+<button onclick="showDate()">Show Date</button>
+-->
+
+<button onmouseover="showDate()" onmouseout="clearDate()">Show Date</button>
+<h1 id="time"></h1>
+</div>
+
+<script>
+//person object
+/* var person = {
+ 	firstname: 'Jay',
+ 	lastname: 'Chou',
+ 	age: 30,
+ 	children: ['Ken', 'Nick'],
+ 	address: {
+ 		street:'555 Something st',
+ 		city: 'Boston',
+ 		state: 'MA'
+ 	},
+ 	fullName: function(){
+ 		return this.firstname+" "+this.lastname;
+ 	}
+ }
+ console.log(person.fullName())
+ console.log(person.children[1]); */
+
+ //object constructor
+/*
+ var apple = new Object();
+ apple.color = 'red';
+ apple.shape = 'round';
+
+ apple.describe = function(){
+ 	return 'An apple is the color '+ this.color+' and the shape '+this.shape;
+ }
+ console.log(apple.describe());
+
+ //constructor pattern
+
+function Fruit(name, color, shape){
+	this.name = name;
+	this.color = color;
+	this.shape = shape;
+
+	this.describe = function(){
+		return 'A ' + this.name + ' is the color '+ this.color+ ' and the shape '+ this.shape;
+	}
+}
+
+var apple = new Fruit('apple','red', 'round');
+var melon = new Fruit('melon','green', 'round')
+
+console.log(melon.describe());
+
+//array of object
+
+var users = [
+	{
+		name: 'John Doe',
+		age:30
+	},
+	{
+		name: 'Mark Smith',
+		age: 44
+	},
+	{
+		name: 'Shelly Williams',
+		age:20
+	}
+];
+
+console.log(users[0]);
+console.log(users[0].name);
+*/
+
+function doClick(){
+	alert('You clicked!');
+}
+function changeText(){
+	var heading = document.getElementById('heading');
+	heading.innerHTML = 'You clicked!';
+}
+
+function showDate(){
+	var time = document.getElementById('time');
+	time.innerHTML = Date();
+}
+
+function clearDate(){
+	var time = document.getElementById('time');
+	time.innerHTML = '';
+}
+</script>
+
+</body>
+</html>

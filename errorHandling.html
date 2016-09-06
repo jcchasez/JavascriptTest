@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Javascript regular expression </title>
+
+	<script type="text/javascript">
+	<!-- Hide this from browsers that dont understand Javascript
+	
+	function divideMe(helpId){
+		var topVar = document.getElemenById("topVar").value;
+		var botVar = document.getElemenById("botVar").value;
+
+		try {
+			if(!topVar || !botVar){
+				throw new Error("Please enter a value in both fields");
+			}
+			else if(isNaN(topVar) || isNaN(botVar)){
+				throw new Error("Please enter only numbers in the fields");
+			}
+			else if(botVar == 0){
+				throw new Error("Cant divide by zero");
+			}
+
+			if(helpId != null){
+				//make sure nothing is already in it
+				while(helpId.firstChild)
+					helpId.removeChild(helpId.firstChild);
+			}
+			var answer = topVar + " / " + botVar + " = "+ topVar/botVar;
+			helpId.appendChild(document.createTextNode(answer));
+		}
+
+		catch(errMsg){
+			if(helpId != null){
+				while(helpId.firstChild)
+					helpId.removeChild(helpId.firstChild);
+			}
+
+			helpId.appendChild(document.createTextNode(errMsg));
+		}
+	}
+	-->FInish hiding the Javascript code
+	</script>
+
+	<noscript>
+	<h3>This site requires Javascript</h3>
+	</noscript>
+</head>
+
+<body>
+   <div>
+     Enter the numbers you'd like to divide:<br />
+     <input id="topvar" name="topvar" type ="text" size="10" /><br />
+     <input id="botvar" name="botvar" type ="text" size="10" onblur="divideMe(document.getElemenById('answer'))" /><br />
+     <span id="answer"></span>
+    </div>
+
+</body>
+</html>
