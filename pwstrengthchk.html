@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Check Password Strength</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <form id="form1" >
+    <div>
+        <input id="TextBox1" type="password" onkeyup="chkPwStrength()"></input>
+        <Label id="Label1" text="Label"></Label>
+    </div>
+        <script type="text/javascript">
+          function chkPwStrength() {
+                var pwTextBox = document.getElementById("TextBox1");
+                var pw = pwTextBox.value;
+                var specialChar = "-!@#$%^&*~_?=+";
+                var pwScore = 0;
+
+                for (var i = 0; i < pw.length; i++) {
+                    if (specialChar.indexOf(pw.charAt(i)) > -1) {
+                        pwScore += 20;
+                    }
+                }
+
+                if (/[a-z]/.test(pw)) {
+                    pwScore += 20;
+                }
+
+                if (/[A-Z]/.test(pw)) {
+                    pwScore += 20;
+                }
+                if (/[\d]/.test(pw)) {
+                    pwScore += 20;
+                }
+                if (pw.length >= 8) {
+                    pwScore += 20;
+                }
+
+                var strength = "";
+                var backgroundColor = "";
+
+                if (pwScore >= 100) {
+                    strength = "Strong";
+                    backgroundColor = "green";
+                }
+                else if (pwScore >= 80) {
+                    strength = "Medium";
+                    backgroundColor = "gray";
+                }
+                else if (pwScore >= 60) {
+                    strength = "Weak";
+                    backgroundColor = "maroon";
+                }
+                else {
+                    strength = "Very Weak";
+                    backgroundColor = "red";
+                }
+
+                document.getElementById("Label1").innerHTML = strength;
+                //document.getElementById("TextBox1").style.backgroundColor = "white";
+                document.getElementById("TextBox1").style.backgroundColor = backgroundColor;
+
+            }
+        </script>
+    </form>
+</body>
+</html>

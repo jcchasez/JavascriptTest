@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> HTML5 Canvas Graphics and Animation </title>
+</head>
+
+<body>
+<!-- default 300*150 -->
+<canvas id="canvas" width="600" height="300"></canvas>
+
+<script>
+window.onload = function(){
+/*	//tag
+	var canvas = document.getElementByTagName("canvas")[0];//if only one item
+	//jquery
+	var canvas = $("#canvas")[0];
+	//create
+	var canvas = document.createElement("canvas");
+	document.body.appendChild(canvas);  canvas.width = 400;
+	canvas.height = 700;*/
+  /* //jquery
+	$(canvas).width(400);
+	//NOOOO! Only change the big map, wont change the resolution of canvas */
+//context.fillRect(10, 10, 100, 200);
+	// id
+	var canvas = document.getElementById('canvas'),
+	     context = canvas.getContext("2d");
+
+	context.beginPath();
+	context.moveTo(100, 100);
+	context.lineTo(300, 100);
+	context.lineTo(300, 200);
+	context.lineTo(100, 200);
+	//context.lineTo(100, 100);//context.closePath();context.fill();
+	context.stroke();
+	
+
+
+	
+
+	
+}
+</script>
+</body>
+</html>
